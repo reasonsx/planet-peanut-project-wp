@@ -1,0 +1,198 @@
+/*
+Theme Name: Planet Peanut
+Author: Kamil Kregiel, Karolina Brzek, Madalina Sirbu
+Version: 1.0
+Description: A custom WordPress theme using Tailwind CSS.
+*/
+
+  @font-face {
+    font-family: "Synonym-Regular";
+    src: url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.eot");
+    src: url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/141d0930d88f0321d415e423e22c8883.svg#Synonym-Regular")format("svg");
+}
+
+  body {
+    font-family: 'Synonym-Regular' !important;
+  }
+
+.hero-buttons a:hover {
+  background-color: #005A7A;
+}
+ /* Base styles for the competition section */
+.info-section {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.canvas-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.text-content {
+  max-width: 50%;
+  @media screen and (max-width: 1024px) {
+    max-width: 100%;
+    
+  }
+}
+.canvas-container {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-section .grid {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.info-section .text-content {
+  text-align: center; /* Center text content */
+  margin: 0 auto; /* Center horizontally */
+  padding: 16px; /* Optional: Add padding for spacing */
+}
+.home-canvas {
+  width: 448px;
+  height: 448px;
+  @media screen and (max-width: 1024px) {
+    width: 320px;
+    height: 320px;
+    
+  }
+}
+.statistics-section {
+  background-image: url('./img/statictis-background-new.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  width: 100%;
+  height: 700px; /* Adjust height as necessary */
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  
+}
+
+@media screen and (max-width: 1024px) {
+  .statistics-section {
+    height: 960px;
+    background-image: url('./img/statistics-bg-copy.svg');
+  }
+  
+}
+/* Large screens (Desktop) */
+@media (min-width: 1024px) {
+  .info-section {
+    flex-direction: row;
+  }
+
+  /* Even sections: Canvas on the right */
+  .info-section:nth-child(even) .grid {
+    flex-direction: row;
+  }
+
+  /* Odd sections: Canvas on the left */
+  .info-section:nth-child(odd) .grid {
+    flex-direction: row-reverse;
+  }
+
+  .info-section .text-content {
+    text-align: left; /* Align text to the left for desktop */
+    margin: 0; /* Reset margins */
+  }
+
+  .text-content {
+    width: auto;
+  }
+}
+
+
+
+/* Competition post CSS */
+/* Base styles for the competition section */
+.competition-info-section:nth-child(odd) {
+  display: flex;
+  flex-direction: column-reverse;
+  background-image: url('./img/competition-bg.svg'); /* Background image applied to section */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%; /* Ensure it takes full width */
+  height: 90vh; /* Adjust height as necessary */
+  @media (max-width: 1023px) {
+    height: 100vh;
+  }
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+}
+
+.competition-text-content {
+  max-width: 512px;
+}
+
+.competition-canvas-container {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.competition-info-section .grid {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.competition-info-section .competition-text-content {
+  text-align: center; /* Center text content */
+  margin: 0 auto; /* Center horizontally */
+  padding: 16px; /* Optional: Add padding for spacing */
+}
+
+/* Large screens (Desktop) */
+@media (min-width: 1024px) {
+  .competition-info-section {
+    flex-direction: row;
+  }
+
+  /* Even sections: Canvas on the right */
+  .competition-info-section:nth-child(even) .grid {
+    flex-direction: row;
+  }
+
+  /* Odd sections: Canvas on the left */
+  .competition-info-section:nth-child(odd) .grid {
+    flex-direction: row-reverse;
+  }
+
+  .competition-info-section .competition-text-content {
+    text-align: left; /* Align text to the left for desktop */
+    margin: 0; /* Reset margins */
+  }
+
+  .competition-text-content {
+    width: auto;
+  }
+}
+ 
+@media (max-width: 1023px) {
+  .competition-text-content {
+    width: 100%;
+
+  }
+}
+@media (max-width: 1023px) {
+  .competition-text-content {
+    width: 100%;
+
+  }
+  .competition-info-section:nth-child(odd){
+    background-image: none;
+  }
+}
